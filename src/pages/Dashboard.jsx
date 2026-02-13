@@ -37,8 +37,6 @@ export function Dashboard() {
       efficiencyChange: 0,
       assetUtilization: 0,
       utilizationChange: 0,
-      totalDowntime: 0,
-      downtimeChange: 0,
       maintenanceDue: 0
     },
     productionTrends: [],
@@ -125,16 +123,6 @@ export function Dashboard() {
                 </motion.div>
                 <motion.div variants={itemVariants}>
                   <MetricsCard
-                    title="Total Downtime"
-                    value={`${latestMetrics.totalDowntime}h`}
-                    change={latestMetrics.downtimeChange}
-                    icon={<AlertTriangle className="w-6 h-6" />}
-                    color="orange"
-                    isNegativeGood
-                  />
-                </motion.div>
-                <motion.div variants={itemVariants}>
-                  <MetricsCard
                     title="Maintenance Due"
                     value={latestMetrics.maintenanceDue}
                     change={0}
@@ -176,12 +164,11 @@ export function Dashboard() {
                 </motion.div>
                 <motion.div variants={itemVariants}>
                   <MetricsCard
-                    title="Total Downtime"
-                    value={`${latestMetrics.totalDowntime}h`}
-                    change={latestMetrics.downtimeChange}
-                    icon={<AlertTriangle className="w-6 h-6" />}
-                    color="orange"
-                    isNegativeGood
+                    title="Asset Utilization"
+                    value={`${latestMetrics.assetUtilization}%`}
+                    change={latestMetrics.utilizationChange}
+                    icon={<Activity className="w-6 h-6" />}
+                    color="green"
                   />
                 </motion.div>
                 <motion.div variants={itemVariants}>
